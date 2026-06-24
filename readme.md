@@ -60,5 +60,5 @@ Create a multi-step registration that allow users to submit personal information
 
 ## Screenshot
 
-![Project Screenshot](D:\Multi-Step-Form-main\Screenshot .png)
+![Project Screenshot](https://github.com/sara-ahmed593/Multi-Step-Form/blob/357b34a1e66c6135ca148c29eab60fcac8926df1/Screenshot%20.png)
 
