@@ -1,0 +1,505 @@
+@use './variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+@mixin form-container {
+    background-color: variables.$text-white;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 640px;
+    height: 525px;
+    box-shadow: 10px 10px variables.$bg-shadow;
+    display: none;
+
+    .stepper {
+        display: flex;
+        justify-content: space-between;
+        margin: 18px 32px;
+
+        .step-circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .step-line {
+            width: 100px;
+            height: 6px;
+            border-radius: 3px;
+            margin-top: 14px;
+        }
+
+        .active {
+            background-color: variables.$bg-main;
+            color: variables.$text-white;
+        }
+
+        .inactive {
+            background-color: variables.$bg-num;
+        }
+    }
+
+
+    .line {
+        border: 1px solid variables.$bg-num;
+        width: 580px;
+        margin: 32px 30px;
+    }
+
+    .form-title {
+        color: variables.$text-main;
+        font-size: 24px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        margin: 32px 30px 6px;
+    }
+
+    .from-des {
+        color: variables.$text-gray;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
+        margin: 6px 30px 24px;
+    }
+
+    .line-2 {
+        border: 1px solid variables.$bg-num;
+        width: 580px;
+        margin: 26px 30px;
+    }
+
+    .btn-next {
+        background: variables.$bg-main;
+        color: variables.$text-white;
+        border: none;
+        border-radius: 8px;
+        padding: 0 24px;
+        margin: 5px 30px;
+        height: 42px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+    }
+
+    .btn-back {
+        background: variables.$text-white;
+        color: variables.$bg-main ;
+        border: 1px solid variables.$bg-main ;
+        border-radius: 8px;
+        padding: 0 24px;
+        margin: 5px 30px;
+        height: 42px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+    }
+
+
+}
+
+
+body {
+    background-color: variables.$bg-body;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .title {
+
+        font-family: "Merriweather", sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+        text-align: center;
+        margin-top: 180px;
+        margin-bottom: 14px;
+    }
+
+    .describtion {
+
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+
+        margin-bottom: 32px;
+        max-width: 556px;
+        line-height: 1.6;
+    }
+
+
+    .container-1 {
+
+        @include form-container;
+
+        .fields {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .field {
+                display: flex;
+                flex-direction: column;
+
+                margin: 10px 24px;
+
+                label {
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 500;
+                }
+
+                input {
+                    width: 270px;
+                    height: 40px;
+                    border-radius: 8px;
+                    border: 1px solid variables.$color-border;
+                    padding: 12px;
+                    transition: 0.2s;
+
+                    &:focus {
+                        border: 1px solid variables.$bg-main ;
+                        outline: none;
+                    }
+
+                    &::placeholder {
+                        color: variables.$text-placeholder;
+                        font-size: 14px;
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+
+                    }
+
+                }
+
+            }
+
+            .error {
+                color: red;
+                font-size: 14px;
+                margin-top: 3px;
+            }
+        }
+
+        .footer {
+            display: flex;
+            justify-content: flex-end;
+
+        }
+    }
+
+
+
+
+
+
+
+    .container-2 {
+        @include form-container;
+
+        .fields {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .field2 {
+                width: 270px;
+                height: 69px;
+                display: flex;
+
+                border: 1px solid variables.$color-border;
+                border-radius: 8px;
+                transition: 0.2s;
+                margin: 16px 24px;
+                gap: 23px;
+                cursor: pointer;
+                align-items: center;
+                padding: 0 25px;
+
+
+
+                .icon {
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    background-color: variables.$bg-main;
+                    padding: 7px;
+                }
+
+                span {
+
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 500;
+                }
+            }
+
+            .selected {
+                border: 1px solid variables.$bg-main;
+
+            }
+
+        }
+
+
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+
+
+
+            .error {
+                color: red;
+                font-size: 14px;
+            }
+
+
+        }
+    }
+
+    .container-3 {
+
+        @include form-container;
+
+        .fields {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .field {
+                width: 270px;
+                height: 69px;
+                display: flex;
+
+                border: 1px solid variables.$color-border;
+                border-radius: 8px;
+                transition: 0.2s;
+                margin: 16px 24px;
+                gap: 23px;
+                cursor: pointer;
+                align-items: center;
+                padding: 0 25px;
+
+                &:has(input:checked) {
+                    border: 1px solid variables.$bg-main;
+                }
+
+                input[type="checkbox"] {
+                    accent-color: variables.$bg-main;
+                    //  accent-color: red;
+                    width: 16px;
+                    height: 16px;
+                    transition: 0.2s;
+                }
+
+                span {
+
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 500;
+                }
+            }
+
+        }
+
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+
+
+            .error {
+                color: red;
+                font-size: 14px;
+            }
+
+
+        }
+    }
+
+
+
+
+    .container-4 {
+
+        @include form-container;
+
+
+        .fields {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 30px;
+
+            .field {
+                width: 177px;
+                height: 69px;
+                display: flex;
+                flex-direction: column;
+                border: 1px solid variables.$color-border;
+                background: variables.$bg-num;
+
+                border-radius: 8px;
+
+                label {
+
+                    font-size: 12px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 400;
+                    color: variables.$text-review;
+                    margin: 14px 16px 2px;
+                }
+
+                span {
+
+                    margin: 2px 14px 16px;
+                    font-size: 12px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 500;
+                    color: variables.$text-main;
+                }
+            }
+
+        }
+
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+    }
+
+
+    .container-5 {
+
+        @include form-container;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+
+            margin-bottom: 24px;
+
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 16px;
+
+        }
+
+        span {
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            color: variables.$text-gray;
+            text-align: center;
+            max-width: 474px;
+            width: 100%;
+            line-height: 1.6;
+
+
+
+        }
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+
+        .title {
+            font-size: 24px;
+            margin: 80px 20px 5px;
+        }
+
+        .describtion {
+            font-size: 16px;
+            padding: 0 20px;
+        }
+
+        .container {
+
+            width: 100%;
+            max-width: 340px;
+            height: auto;
+            min-height: 525px;
+            padding-bottom: 5px;
+
+            .stepper {
+
+                margin: 18px 22px;
+
+
+                .step-circle {
+                    width: 28px;
+                    height: 28px;
+                    font-size: 12px;
+                }
+
+                .step-line {
+                    width: 60px;
+                    height: 4px;
+                    margin-top: 12px;
+                }
+
+
+            }
+
+            .line,
+            .line-2 {
+                width: 280px;
+                margin: 10px auto;
+            }
+        }
+
+        .container-1,
+        .container-2,
+        .container-3,
+        .container-4 {
+
+            .fields {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .container-5 {
+            span {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+    }
+}

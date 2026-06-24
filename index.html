@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=SN+Pro:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SN+Pro:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/dist/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="title">Join our Community of Developers</h1>
+        <p class="describtion">To join our community and participate in frontend challenges.
+            Please fill out the following form.</p>
+    </header>
+    <div class="container-1 container" data-step="1">
+
+        <div class="stepper">
+            <div class="step-circle active">1</div>
+            <div class="step-line inactive"></div>
+            <div class="step-circle inactive">2</div>
+            <div class="step-line inactive"></div>
+            <div class="step-circle inactive">3</div>
+            <div class="step-line inactive"></div>
+            <div class="step-circle inactive">4</div>
+        </div>
+        <div class="line"></div>
+        <form>
+            <h2 class="form-title">Personal Information</h2>
+            <p class="from-des">Please provide your personal details so we can get to know you better.</p>
+            <div class="fields">
+                <div class="field">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="your name">
+                    <small id="error1" class="error"></small>
+                </div>
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="name@email.com">
+                    <small id="error2" class="error"></small>
+                </div>
+                <div class="field">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+91 1234567890">
+                    <small id="error3" class="error"></small>
+                </div>
+                <div class="field">
+                    <label for="portfolio">Portfolio/GitHub Link</label>
+                    <input type="text" id="portfolio" placeholder="github.com/rishipurwar1">
+                    <small id="error4" class="error"></small>
+                </div>
+            </div>
+
+            <div class="line-2"></div>
+            <footer class="footer">
+                <button id="button1" type="button" class="button btn-next">Next Step</button>
+            </footer>
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-2 container" data-step="2">
+
+        <div class="stepper">
+            <div class="step-circle active">1</div>
+            <div class="step-line active"></div>
+            <div class="step-circle active">2</div>
+            <div class="step-line inactive"></div>
+            <div class="step-circle inactive">3</div>
+            <div class="step-line inactive"></div>
+            <div class="step-circle inactive">4</div>
+        </div>
+        <div class="line"></div>
+        <form>
+            <h2 class="form-title">Skill Level</h2>
+            <p class="from-des">Please tell us about your skill level in frontend development.</p>
+            <div class="fields">
+                <div class="field2 ">
+                    <img class="icon" src="./assets/img/plant.svg" alt="icon">
+                    <span>Beginner</span>
+                </div>
+
+                <div class="field2 ">
+                    <img class="icon" src="./assets/img/compass.svg" alt="icon">
+                    <span>Intermediate</span>
+                </div>
+                <div class="field2 ">
+                    <img class="icon" src="./assets/img/rocet.svg" alt="icon">
+                    <span>Advanced</span>
+                </div>
+                <div class="field2 ">
+                    <img class="icon" src="./assets/img/win.svg" alt="icon">
+                    <span>Expert</span>
+                </div>
+
+            </div>
+
+
+            <div class="line-2"></div>
+            <footer class="footer">
+                <button class="btn-back" type="button" id="back1">Go Back</button>
+                <small id="error5" class="error"></small>
+                <button class=" button btn-next" type="button" id="button2">Next Step</button>
+            </footer>
+        </form>
+
+    </div>
+
+
+
+
+
+    <div class="container-3 container" data-step="3">
+
+        <div class="stepper">
+            <div class="step-circle active">1</div>
+            <div class="step-line active"></div>
+            <div class="step-circle active">2</div>
+            <div class="step-line active"></div>
+            <div class="step-circle active">3</div>
+            <div class="step-line inactive"></div>
+            <div class="step-circle inactive">4</div>
+        </div>
+        <div class="line"></div>
+        <form>
+            <h2 class="form-title">Challenge Preference</h2>
+            <p class="from-des">Please tell us which frontend challenges you would like to participate in.</p>
+            <div class="fields">
+                <div class="field">
+                    <input type="checkbox" class="checkbox" value="HTML/CSS/JS" name="tech">
+                    <span>HTML/CSS/JS</span>
+
+                </div>
+
+                <div class="field">
+                    <input type="checkbox" class="checkbox" value="ReactJs" name="tech">
+                    <span>ReactJs</span>
+                </div>
+                <div class="field">
+                    <input type="checkbox" class="checkbox" value="AngularJs" name="tech">
+                    <span>AngularJs</span>
+                </div>
+                <div class="field">
+                    <input type="checkbox" class="checkbox" value="Vue.js" name="tech">
+                    <span>Vue.js</span>
+                </div>
+            </div>
+
+            <div class="line-2"></div>
+            <footer class="footer">
+                <button class="btn-back" type="button" id="back2">Go Back</button>
+                <small id="error6" class="error"></small>
+                <button class="button btn-next" type="button" id="button3">Next Step</button>
+            </footer>
+        </form>
+
+    </div>
+
+
+
+
+
+    <div class="container-4 container" data-step="4">
+
+        <div class="stepper">
+            <div class="step-circle active">1</div>
+            <div class="step-line active"></div>
+            <div class="step-circle active">2</div>
+            <div class="step-line active"></div>
+            <div class="step-circle active">3</div>
+            <div class="step-line active"></div>
+            <div class="step-circle active">4</div>
+        </div>
+        <div class="line"></div>
+        <form>
+            <h2 class="form-title">Review and Confirm</h2>
+            <p class="from-des">Please review your information to make sure everything is accurate.</p>
+            <div class="fields">
+                <div class="field">
+                    <label>Full Name</label>
+                    <span class="reviewName"></span>
+
+                </div>
+                <div class="field">
+                    <label>Email Address</label>
+                    <span class="reviewEmail"></span>
+
+                </div>
+                <div class="field">
+                    <label>Phone Number</label>
+                    <span class="reviewPhone"></span>
+
+                </div>
+
+                <div class="field">
+                    <label>Portfolio/GitHub Link</label>
+                    <span class="reviewHub"></span>
+                </div>
+                <div class="field">
+                    <label>Skill Level</label>
+                    <span class="reviewLevel"></span>
+                </div>
+                <div class="field">
+                    <label>Challenge Preference</label>
+                    <span class="reviewChallenge"></span>
+                </div>
+            </div>
+
+            <div class="line-2"></div>
+            <footer class="footer">
+                <button class="btn-back" type="button" id="back3">Go Back</button>
+                <button class="button btn-next" type="button" id="button4">Submit</button>
+            </footer>
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-5">
+        <img src="./assets/img/Frame.svg" alt="frame">
+        <h2>Congratulations! 🎉</h2>
+        <span>Your profile has been created and you are now ready to start participating in challenges that match
+            your
+            interests and coding experience level.</span>
+    </div>
+
+
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
