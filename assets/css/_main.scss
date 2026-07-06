@@ -12,7 +12,7 @@
     border-radius: 16px;
     width: 100%;
     max-width: 640px;
-    height: 525px;
+    min-height: 33rem;
     box-shadow: 10px 10px variables.$bg-shadow;
     display: none;
 
@@ -53,7 +53,7 @@
 
     .line {
         border: 1px solid variables.$bg-num;
-        width: 580px;
+        width: 90%;
         margin: 32px 30px;
     }
 
@@ -75,7 +75,7 @@
 
     .line-2 {
         border: 1px solid variables.$bg-num;
-        width: 580px;
+        width: 90%;
         margin: 26px 30px;
     }
 
@@ -91,7 +91,21 @@
         font-weight: 500;
         font-family: 'Poppins', sans-serif;
         cursor: pointer;
+
+        &:hover {
+            background: variables.$text-white;
+            color: variables.$bg-main;
+            border: 1px solid variables.$bg-main ;
+
+        }
+
+        &:focus-visible {
+            outline: 2px solid variables.$text-review;
+        }
     }
+
+
+
 
     .btn-back {
         background: variables.$text-white;
@@ -105,6 +119,15 @@
         font-weight: 500;
         font-family: 'Poppins', sans-serif;
         cursor: pointer;
+
+        &:hover {
+            background: variables.$bg-main;
+            color: variables.$text-white;
+        }
+
+        &:focus-visible {
+            outline: 2px solid variables.$text-review;
+        }
     }
 
 
@@ -118,29 +141,35 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    gap: 14px;
 
-    .title {
-
-        font-family: "Merriweather", sans-serif;
-        font-size: 32px;
-        font-weight: 900;
-        text-align: center;
-        margin-top: 180px;
-        margin-bottom: 14px;
-    }
-
-    .describtion {
-
-        font-family: "Poppins", sans-serif;
-        font-size: 18px;
-        font-weight: 400;
-        text-align: center;
-
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
         margin-bottom: 32px;
-        max-width: 556px;
-        line-height: 1.6;
-    }
 
+
+        .title {
+
+            font-family: "Merriweather", sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            text-align: center;
+
+        }
+
+        .describtion {
+
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            text-align: center;
+            max-width: 556px;
+            line-height: 1.6;
+        }
+    }
 
     .container-1 {
 
@@ -164,7 +193,8 @@ body {
                 }
 
                 input {
-                    width: 270px;
+                    width: 100%;
+                    max-width: 17rem;
                     height: 40px;
                     border-radius: 8px;
                     border: 1px solid variables.$color-border;
@@ -183,6 +213,12 @@ body {
                         font-weight: 400;
 
                     }
+
+
+                    &.is-invalid {
+                        border-color: red;
+                    }
+
 
                 }
 
@@ -216,10 +252,11 @@ body {
             grid-template-columns: repeat(2, 1fr);
 
             .field2 {
-                width: 270px;
-                height: 69px;
+                width: 100%;
+                max-width: 17rem;
+                height: 4rem;
                 display: flex;
-
+                background-color: transparent;
                 border: 1px solid variables.$color-border;
                 border-radius: 8px;
                 transition: 0.2s;
@@ -240,11 +277,17 @@ body {
                 }
 
                 span {
-
-                    margin-bottom: 8px;
                     font-size: 14px;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 500;
+                }
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                &:focus-visible {
+                    transform: translateY(-5px);
                 }
             }
 
@@ -281,10 +324,11 @@ body {
             grid-template-columns: repeat(2, 1fr);
 
             .field {
-                width: 270px;
-                height: 69px;
+                width: 100%;
+                max-width: 17rem;
+                height: 4rem;
                 display: flex;
-
+                background-color: transparent;
                 border: 1px solid variables.$color-border;
                 border-radius: 8px;
                 transition: 0.2s;
@@ -294,13 +338,14 @@ body {
                 align-items: center;
                 padding: 0 25px;
 
+
+
                 &:has(input:checked) {
                     border: 1px solid variables.$bg-main;
                 }
 
                 input[type="checkbox"] {
                     accent-color: variables.$bg-main;
-                    //  accent-color: red;
                     width: 16px;
                     height: 16px;
                     transition: 0.2s;
@@ -308,12 +353,24 @@ body {
 
                 span {
 
-                    margin-bottom: 8px;
+
                     font-size: 14px;
                     font-family: 'Poppins', sans-serif;
                     font-weight: 500;
                 }
+
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                &:has(input:focus-visible) {
+                    transform: translateY(-5px);
+                }
+
             }
+
+
 
         }
 
@@ -347,8 +404,8 @@ body {
             margin: 30px;
 
             .field {
-                width: 177px;
-                height: 69px;
+                width: 100%;
+                height: 4rem;
                 display: flex;
                 flex-direction: column;
                 border: 1px solid variables.$color-border;
@@ -373,6 +430,10 @@ body {
                     font-weight: 500;
                     color: variables.$text-main;
                 }
+
+
+
+
             }
 
         }
@@ -447,7 +508,7 @@ body {
             width: 100%;
             max-width: 340px;
             height: auto;
-            min-height: 525px;
+            min-height: 44rem;
             padding-bottom: 5px;
 
             .stepper {
@@ -472,8 +533,9 @@ body {
 
             .line,
             .line-2 {
-                width: 280px;
-                margin: 10px auto;
+                width: 90%;
+                margin: 2rem auto;
+
             }
         }
 

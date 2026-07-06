@@ -32,49 +32,81 @@ const reviewChallenge = document.querySelector(".reviewChallenge");
 
 
 // Validates all four input fields before allowing the user to proceed
-function initiateStep1() {
-    let isValid = true;
 
+function validateName() {
     if (fullname.value.length < 3 || fullname.value.length > 8) {
-        error1.textContent = 'Name must be between 3 and 8 characters';
-        isValid = false;
-    } else {
-        error1.textContent = ''
-
+        error1.textContent = "Name must be between 3 and 8 characters";
+        fullname.classList.add("is-invalid");
+        return false;
     }
 
+    error1.textContent = "";
+    fullname.classList.remove("is-invalid");
+    return true;
+}
+
+function validateEmail() {
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (!regexEmail.test(email.value)) {
-        error2.innerHTML = 'Please enter a valid email address';
-        isValid = false;
-    } else {
-        error2.textContent = ''
+        error2.textContent = "Please enter a valid email address (e.g. name@example.com)";
+        email.classList.add("is-invalid");
+        return false;
     }
 
+    error2.textContent = "";
+    email.classList.remove("is-invalid");
+    return true;
+}
 
-    const regexPhone = /^\+91\s?\d{10}$/
+function validatePhone() {
+    const regexPhone = /^\+?\d{10,15}$/;
+
     if (!regexPhone.test(phone.value)) {
-        error3.textContent = 'Invalid Phone Number'
-        isValid = false;
-    } else {
-        error3.textContent = ''
+        error3.textContent = "Enter a valid phone number in the format +91 9876543210.";
+        phone.classList.add("is-invalid");
+        return false;
     }
 
+    error3.textContent = "";
+    phone.classList.remove("is-invalid");
+    return true;
+}
 
-
-    const regexPortfolio = /^github\.com\/[\w-]+$/
+function validatePortfolio() {
+    const regexPortfolio = /^github\.com\/[\w-]+$/;
 
     if (!regexPortfolio.test(portfolio.value)) {
-        error4.textContent =
-            'Enter a valid GitHub profile link';
-        isValid = false;
-    } else {
-        error4.textContent = ''
+        error4.textContent = "Enter a valid GitHub profile link (e.g.  github.com/username.)";
+        portfolio.classList.add("is-invalid");
+        return false;
     }
 
-    return isValid;
-
+    error4.textContent = "";
+    portfolio.classList.remove("is-invalid");
+    return true;
 }
+
+function initiateStep1() {
+    return (
+        validateName() &&
+        validateEmail() &&
+        validatePhone() &&
+        validatePortfolio()
+    );
+}
+
+fullname.addEventListener("blur", validateName);
+fullname.addEventListener("input", validateName);
+
+email.addEventListener("blur", validateEmail);
+email.addEventListener("input", validateEmail);
+
+phone.addEventListener("blur", validatePhone);
+phone.addEventListener("input", validatePhone);
+
+portfolio.addEventListener("blur", validatePortfolio);
+portfolio.addEventListener("input", validatePortfolio);
 
 
 
@@ -82,6 +114,13 @@ function initiateStep1() {
 let value = '';
 
 function selectField(fld) {
+
+    if (fld.classList.contains('selected')) {
+        fld.classList.remove('selected');
+        value = '';
+        return;
+    }
+
     const selected = document.querySelector('.selected');
 
     if (selected) {
@@ -98,16 +137,17 @@ field.forEach(item => {
     });
 });
 
+
 // ensures the user has selected a skill level
 function initiateStep2() {
     let valid = true;
 
     if (value == '') {
-        error5.innerHTML = 'Please Selet one ';
+        error5.textContent = 'Please Selet one ';
         valid = false
     }
     else {
-        error5.innerHTML = '';
+        error5.textContent = '';
     }
     return valid
 }
@@ -145,11 +185,11 @@ function initiateStep3() {
 
     let valid = true;
     if (valueTech == '') {
-        error6.innerHTML = 'Please Selet one ';
+        error6.textContent = 'Please Selet one ';
         valid = false
     }
     else {
-        error6.innerHTML = '';
+        error6.textContent = '';
 
     }
     return valid
@@ -163,14 +203,13 @@ function initiateStep3() {
 // review all collected values from previous steps
 function initiateStep4() {
 
-    reviewName.innerHTML = fullname.value;
-    reviewEmail.innerHTML = email.value;
-    reviewPhone.innerHTML = phone.value;
-    reviewHub.innerHTML = portfolio.value;
-    reviewLevel.innerHTML = value;
-    reviewChallenge.innerHTML = valueTech;
+    reviewName.textContent = fullname.value;
+    reviewEmail.textContent = email.value;
+    reviewPhone.textContent = phone.value;
+    reviewHub.textContent = portfolio.value;
+    reviewLevel.textContent = value;
+    reviewChallenge.textContent = valueTech;
     return true;
-
 }
 
 
@@ -193,6 +232,8 @@ btnsNext.forEach(btn => {
             btn.closest('.container').getAttribute('data-step')
         );
         if (validations[status]()) {
+            highestCompletedStep = status + 1;
+
             if (status === 3) {
                 initiateStep4();
             }
@@ -252,5 +293,33 @@ function goToPrevious(currentStep) {
 
 }
 
+let highestCompletedStep = 1;
 
+const stepCircles = document.querySelectorAll(".step-circle");
+
+stepCircles.forEach(circle => {
+    circle.addEventListener("click", () => {
+        const targetStep = Number(circle.dataset.step);
+        if (targetStep <= highestCompletedStep) {
+            navigateToStep(targetStep);
+        }
+
+    });
+});
+
+function navigateToStep(step) {
+
+    container.forEach(item => {
+        item.style.display = "none";
+    });
+
+
+    const current = document.querySelector(".container-" + step);
+
+    if (step === 5) {
+        current.style.display = "flex";
+    } else {
+        current.style.display = "block";
+    }
+}
 
