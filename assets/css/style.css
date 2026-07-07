@@ -5,29 +5,30 @@
   transition: 0.2s;
 }
 
-body {
+.b-container {
   background-color: #F3F3E3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 24px 10px;
   gap: 14px;
 }
-body header {
+.b-container header {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
   margin-bottom: 32px;
 }
-body header .title {
+.b-container header .title {
   font-family: "Merriweather", sans-serif;
   font-size: 32px;
   font-weight: 900;
   text-align: center;
 }
-body header .describtion {
+.b-container header .describtion {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -35,7 +36,7 @@ body header .describtion {
   max-width: 556px;
   line-height: 1.6;
 }
-body .container-1 {
+.b-container .container-1 {
   background-color: #fff;
   border-radius: 16px;
   width: 100%;
@@ -44,12 +45,12 @@ body .container-1 {
   box-shadow: 10px 10px rgba(250, 180, 100, 0.2);
   display: none;
 }
-body .container-1 .stepper {
+.b-container .container-1 .stepper {
   display: flex;
   justify-content: space-between;
   margin: 18px 32px;
 }
-body .container-1 .stepper .step-circle {
+.b-container .container-1 .stepper .step-circle {
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -59,48 +60,49 @@ body .container-1 .stepper .step-circle {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
+  cursor: pointer;
 }
-body .container-1 .stepper .step-line {
+.b-container .container-1 .stepper .step-line {
   width: 100px;
   height: 6px;
   border-radius: 3px;
   margin-top: 14px;
 }
-body .container-1 .stepper .active {
+.b-container .container-1 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
 }
-body .container-1 .stepper .inactive {
+.b-container .container-1 .stepper .inactive {
   background-color: #E5E7EB;
 }
-body .container-1 .line {
+.b-container .container-1 .line {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 32px 30px;
 }
-body .container-1 .form-title {
+.b-container .container-1 .form-title {
   color: #111827;
   font-size: 24px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   margin: 32px 30px 6px;
 }
-body .container-1 .from-des {
+.b-container .container-1 .from-des {
   color: #6B7280;
   font-size: 14px;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   margin: 6px 30px 24px;
 }
-body .container-1 .line-2 {
+.b-container .container-1 .line-2 {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 26px 30px;
 }
-body .container-1 .btn-next {
+.b-container .container-1 .btn-next {
   background: #FC6C4C;
   color: #fff;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 8px;
   padding: 0 24px;
   margin: 5px 30px;
@@ -110,15 +112,15 @@ body .container-1 .btn-next {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-1 .btn-next:hover {
+.b-container .container-1 .btn-next:hover {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
 }
-body .container-1 .btn-next:focus-visible {
+.b-container .container-1 .btn-next:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-1 .btn-back {
+.b-container .container-1 .btn-back {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
@@ -131,29 +133,29 @@ body .container-1 .btn-back {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-1 .btn-back:hover {
+.b-container .container-1 .btn-back:hover {
   background: #FC6C4C;
   color: #fff;
 }
-body .container-1 .btn-back:focus-visible {
+.b-container .container-1 .btn-back:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-1 .fields {
+.b-container .container-1 .fields {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-body .container-1 .fields .field {
+.b-container .container-1 .fields .field {
   display: flex;
   flex-direction: column;
   margin: 10px 24px;
 }
-body .container-1 .fields .field label {
+.b-container .container-1 .fields .field label {
   margin-bottom: 8px;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
-body .container-1 .fields .field input {
+.b-container .container-1 .fields .field input {
   width: 100%;
   max-width: 17rem;
   height: 40px;
@@ -162,35 +164,35 @@ body .container-1 .fields .field input {
   padding: 12px;
   transition: 0.2s;
 }
-body .container-1 .fields .field input:focus {
-  border: 1px solid #FC6C4C;
+.b-container .container-1 .fields .field input:focus {
+  border: 1px solid #5759c3;
   outline: none;
 }
-body .container-1 .fields .field input::-moz-placeholder {
+.b-container .container-1 .fields .field input::-moz-placeholder {
   color: #9CA3AF;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
-body .container-1 .fields .field input::placeholder {
+.b-container .container-1 .fields .field input::placeholder {
   color: #9CA3AF;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
-body .container-1 .fields .field input.is-invalid {
+.b-container .container-1 .fields .field input.is-invalid {
   border-color: red;
 }
-body .container-1 .fields .error {
+.b-container .container-1 .fields .error {
   color: red;
   font-size: 14px;
   margin-top: 3px;
 }
-body .container-1 .footer {
+.b-container .container-1 .footer {
   display: flex;
   justify-content: flex-end;
 }
-body .container-2 {
+.b-container .container-2 {
   background-color: #fff;
   border-radius: 16px;
   width: 100%;
@@ -199,12 +201,12 @@ body .container-2 {
   box-shadow: 10px 10px rgba(250, 180, 100, 0.2);
   display: none;
 }
-body .container-2 .stepper {
+.b-container .container-2 .stepper {
   display: flex;
   justify-content: space-between;
   margin: 18px 32px;
 }
-body .container-2 .stepper .step-circle {
+.b-container .container-2 .stepper .step-circle {
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -214,48 +216,49 @@ body .container-2 .stepper .step-circle {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
+  cursor: pointer;
 }
-body .container-2 .stepper .step-line {
+.b-container .container-2 .stepper .step-line {
   width: 100px;
   height: 6px;
   border-radius: 3px;
   margin-top: 14px;
 }
-body .container-2 .stepper .active {
+.b-container .container-2 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
 }
-body .container-2 .stepper .inactive {
+.b-container .container-2 .stepper .inactive {
   background-color: #E5E7EB;
 }
-body .container-2 .line {
+.b-container .container-2 .line {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 32px 30px;
 }
-body .container-2 .form-title {
+.b-container .container-2 .form-title {
   color: #111827;
   font-size: 24px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   margin: 32px 30px 6px;
 }
-body .container-2 .from-des {
+.b-container .container-2 .from-des {
   color: #6B7280;
   font-size: 14px;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   margin: 6px 30px 24px;
 }
-body .container-2 .line-2 {
+.b-container .container-2 .line-2 {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 26px 30px;
 }
-body .container-2 .btn-next {
+.b-container .container-2 .btn-next {
   background: #FC6C4C;
   color: #fff;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 8px;
   padding: 0 24px;
   margin: 5px 30px;
@@ -265,15 +268,15 @@ body .container-2 .btn-next {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-2 .btn-next:hover {
+.b-container .container-2 .btn-next:hover {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
 }
-body .container-2 .btn-next:focus-visible {
+.b-container .container-2 .btn-next:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-2 .btn-back {
+.b-container .container-2 .btn-back {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
@@ -286,18 +289,18 @@ body .container-2 .btn-back {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-2 .btn-back:hover {
+.b-container .container-2 .btn-back:hover {
   background: #FC6C4C;
   color: #fff;
 }
-body .container-2 .btn-back:focus-visible {
+.b-container .container-2 .btn-back:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-2 .fields {
+.b-container .container-2 .fields {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-body .container-2 .fields .field2 {
+.b-container .container-2 .fields .field2 {
   width: 100%;
   max-width: 17rem;
   height: 4rem;
@@ -312,36 +315,36 @@ body .container-2 .fields .field2 {
   align-items: center;
   padding: 0 25px;
 }
-body .container-2 .fields .field2 .icon {
+.b-container .container-2 .fields .field2 .icon {
   width: 34px;
   height: 34px;
   border-radius: 50%;
   background-color: #FC6C4C;
   padding: 7px;
 }
-body .container-2 .fields .field2 span {
+.b-container .container-2 .fields .field2 span {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
-body .container-2 .fields .field2:hover {
+.b-container .container-2 .fields .field2:hover {
   transform: translateY(-5px);
 }
-body .container-2 .fields .field2:focus-visible {
+.b-container .container-2 .fields .field2:focus-visible {
   transform: translateY(-5px);
 }
-body .container-2 .fields .selected {
+.b-container .container-2 .fields .selected {
   border: 1px solid #FC6C4C;
 }
-body .container-2 .footer {
+.b-container .container-2 .footer {
   display: flex;
   justify-content: space-between;
 }
-body .container-2 .footer .error {
+.b-container .container-2 .footer .error {
   color: red;
   font-size: 14px;
 }
-body .container-3 {
+.b-container .container-3 {
   background-color: #fff;
   border-radius: 16px;
   width: 100%;
@@ -350,12 +353,12 @@ body .container-3 {
   box-shadow: 10px 10px rgba(250, 180, 100, 0.2);
   display: none;
 }
-body .container-3 .stepper {
+.b-container .container-3 .stepper {
   display: flex;
   justify-content: space-between;
   margin: 18px 32px;
 }
-body .container-3 .stepper .step-circle {
+.b-container .container-3 .stepper .step-circle {
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -365,48 +368,49 @@ body .container-3 .stepper .step-circle {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
+  cursor: pointer;
 }
-body .container-3 .stepper .step-line {
+.b-container .container-3 .stepper .step-line {
   width: 100px;
   height: 6px;
   border-radius: 3px;
   margin-top: 14px;
 }
-body .container-3 .stepper .active {
+.b-container .container-3 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
 }
-body .container-3 .stepper .inactive {
+.b-container .container-3 .stepper .inactive {
   background-color: #E5E7EB;
 }
-body .container-3 .line {
+.b-container .container-3 .line {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 32px 30px;
 }
-body .container-3 .form-title {
+.b-container .container-3 .form-title {
   color: #111827;
   font-size: 24px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   margin: 32px 30px 6px;
 }
-body .container-3 .from-des {
+.b-container .container-3 .from-des {
   color: #6B7280;
   font-size: 14px;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   margin: 6px 30px 24px;
 }
-body .container-3 .line-2 {
+.b-container .container-3 .line-2 {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 26px 30px;
 }
-body .container-3 .btn-next {
+.b-container .container-3 .btn-next {
   background: #FC6C4C;
   color: #fff;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 8px;
   padding: 0 24px;
   margin: 5px 30px;
@@ -416,15 +420,15 @@ body .container-3 .btn-next {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-3 .btn-next:hover {
+.b-container .container-3 .btn-next:hover {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
 }
-body .container-3 .btn-next:focus-visible {
+.b-container .container-3 .btn-next:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-3 .btn-back {
+.b-container .container-3 .btn-back {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
@@ -437,18 +441,18 @@ body .container-3 .btn-back {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-3 .btn-back:hover {
+.b-container .container-3 .btn-back:hover {
   background: #FC6C4C;
   color: #fff;
 }
-body .container-3 .btn-back:focus-visible {
+.b-container .container-3 .btn-back:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-3 .fields {
+.b-container .container-3 .fields {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-body .container-3 .fields .field {
+.b-container .container-3 .fields .field {
   width: 100%;
   max-width: 17rem;
   height: 4rem;
@@ -463,35 +467,35 @@ body .container-3 .fields .field {
   align-items: center;
   padding: 0 25px;
 }
-body .container-3 .fields .field:has(input:checked) {
+.b-container .container-3 .fields .field:has(input:checked) {
   border: 1px solid #FC6C4C;
 }
-body .container-3 .fields .field input[type=checkbox] {
+.b-container .container-3 .fields .field input[type=checkbox] {
   accent-color: #FC6C4C;
   width: 16px;
   height: 16px;
   transition: 0.2s;
 }
-body .container-3 .fields .field span {
+.b-container .container-3 .fields .field span {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
-body .container-3 .fields .field:hover {
+.b-container .container-3 .fields .field:hover {
   transform: translateY(-5px);
 }
-body .container-3 .fields .field:has(input:focus-visible) {
+.b-container .container-3 .fields .field:has(input:focus-visible) {
   transform: translateY(-5px);
 }
-body .container-3 .footer {
+.b-container .container-3 .footer {
   display: flex;
   justify-content: space-between;
 }
-body .container-3 .footer .error {
+.b-container .container-3 .footer .error {
   color: red;
   font-size: 14px;
 }
-body .container-4 {
+.b-container .container-4 {
   background-color: #fff;
   border-radius: 16px;
   width: 100%;
@@ -500,12 +504,12 @@ body .container-4 {
   box-shadow: 10px 10px rgba(250, 180, 100, 0.2);
   display: none;
 }
-body .container-4 .stepper {
+.b-container .container-4 .stepper {
   display: flex;
   justify-content: space-between;
   margin: 18px 32px;
 }
-body .container-4 .stepper .step-circle {
+.b-container .container-4 .stepper .step-circle {
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -515,48 +519,49 @@ body .container-4 .stepper .step-circle {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
+  cursor: pointer;
 }
-body .container-4 .stepper .step-line {
+.b-container .container-4 .stepper .step-line {
   width: 100px;
   height: 6px;
   border-radius: 3px;
   margin-top: 14px;
 }
-body .container-4 .stepper .active {
+.b-container .container-4 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
 }
-body .container-4 .stepper .inactive {
+.b-container .container-4 .stepper .inactive {
   background-color: #E5E7EB;
 }
-body .container-4 .line {
+.b-container .container-4 .line {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 32px 30px;
 }
-body .container-4 .form-title {
+.b-container .container-4 .form-title {
   color: #111827;
   font-size: 24px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   margin: 32px 30px 6px;
 }
-body .container-4 .from-des {
+.b-container .container-4 .from-des {
   color: #6B7280;
   font-size: 14px;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   margin: 6px 30px 24px;
 }
-body .container-4 .line-2 {
+.b-container .container-4 .line-2 {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 26px 30px;
 }
-body .container-4 .btn-next {
+.b-container .container-4 .btn-next {
   background: #FC6C4C;
   color: #fff;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 8px;
   padding: 0 24px;
   margin: 5px 30px;
@@ -566,15 +571,15 @@ body .container-4 .btn-next {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-4 .btn-next:hover {
+.b-container .container-4 .btn-next:hover {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
 }
-body .container-4 .btn-next:focus-visible {
+.b-container .container-4 .btn-next:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-4 .btn-back {
+.b-container .container-4 .btn-back {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
@@ -587,20 +592,20 @@ body .container-4 .btn-back {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-4 .btn-back:hover {
+.b-container .container-4 .btn-back:hover {
   background: #FC6C4C;
   color: #fff;
 }
-body .container-4 .btn-back:focus-visible {
+.b-container .container-4 .btn-back:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-4 .fields {
+.b-container .container-4 .fields {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin: 30px;
 }
-body .container-4 .fields .field {
+.b-container .container-4 .fields .field {
   width: 100%;
   height: 4rem;
   display: flex;
@@ -609,25 +614,25 @@ body .container-4 .fields .field {
   background: #E5E7EB;
   border-radius: 8px;
 }
-body .container-4 .fields .field label {
+.b-container .container-4 .fields .field label {
   font-size: 12px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #4B5563;
   margin: 14px 16px 2px;
 }
-body .container-4 .fields .field span {
+.b-container .container-4 .fields .field span {
   margin: 2px 14px 16px;
   font-size: 12px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: #111827;
 }
-body .container-4 .footer {
+.b-container .container-4 .footer {
   display: flex;
   justify-content: space-between;
 }
-body .container-5 {
+.b-container .container-5 {
   background-color: #fff;
   border-radius: 16px;
   width: 100%;
@@ -636,12 +641,12 @@ body .container-5 {
   box-shadow: 10px 10px rgba(250, 180, 100, 0.2);
   display: none;
 }
-body .container-5 .stepper {
+.b-container .container-5 .stepper {
   display: flex;
   justify-content: space-between;
   margin: 18px 32px;
 }
-body .container-5 .stepper .step-circle {
+.b-container .container-5 .stepper .step-circle {
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -651,48 +656,49 @@ body .container-5 .stepper .step-circle {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
+  cursor: pointer;
 }
-body .container-5 .stepper .step-line {
+.b-container .container-5 .stepper .step-line {
   width: 100px;
   height: 6px;
   border-radius: 3px;
   margin-top: 14px;
 }
-body .container-5 .stepper .active {
+.b-container .container-5 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
 }
-body .container-5 .stepper .inactive {
+.b-container .container-5 .stepper .inactive {
   background-color: #E5E7EB;
 }
-body .container-5 .line {
+.b-container .container-5 .line {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 32px 30px;
 }
-body .container-5 .form-title {
+.b-container .container-5 .form-title {
   color: #111827;
   font-size: 24px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   margin: 32px 30px 6px;
 }
-body .container-5 .from-des {
+.b-container .container-5 .from-des {
   color: #6B7280;
   font-size: 14px;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   margin: 6px 30px 24px;
 }
-body .container-5 .line-2 {
+.b-container .container-5 .line-2 {
   border: 1px solid #E5E7EB;
   width: 90%;
   margin: 26px 30px;
 }
-body .container-5 .btn-next {
+.b-container .container-5 .btn-next {
   background: #FC6C4C;
   color: #fff;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 8px;
   padding: 0 24px;
   margin: 5px 30px;
@@ -702,15 +708,15 @@ body .container-5 .btn-next {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-5 .btn-next:hover {
+.b-container .container-5 .btn-next:hover {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
 }
-body .container-5 .btn-next:focus-visible {
+.b-container .container-5 .btn-next:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-5 .btn-back {
+.b-container .container-5 .btn-back {
   background: #fff;
   color: #FC6C4C;
   border: 1px solid #FC6C4C;
@@ -723,29 +729,29 @@ body .container-5 .btn-back {
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
-body .container-5 .btn-back:hover {
+.b-container .container-5 .btn-back:hover {
   background: #FC6C4C;
   color: #fff;
 }
-body .container-5 .btn-back:focus-visible {
+.b-container .container-5 .btn-back:focus-visible {
   outline: 2px solid #4B5563;
 }
-body .container-5 {
+.b-container .container-5 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-body .container-5 img {
+.b-container .container-5 img {
   margin-bottom: 24px;
 }
-body .container-5 h2 {
+.b-container .container-5 h2 {
   text-align: center;
   font-size: 24px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   margin-bottom: 16px;
 }
-body .container-5 span {
+.b-container .container-5 span {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -757,52 +763,52 @@ body .container-5 span {
 }
 
 @media (max-width: 768px) {
-  body .title {
+  .b-container .title {
     font-size: 24px;
     margin: 80px 20px 5px;
   }
-  body .describtion {
+  .b-container .describtion {
     font-size: 16px;
     padding: 0 20px;
   }
-  body .container {
+  .b-container .container {
     width: 100%;
     max-width: 340px;
     height: auto;
     min-height: 44rem;
     padding-bottom: 5px;
   }
-  body .container .stepper {
+  .b-container .container .stepper {
     margin: 18px 22px;
   }
-  body .container .stepper .step-circle {
+  .b-container .container .stepper .step-circle {
     width: 28px;
     height: 28px;
     font-size: 12px;
   }
-  body .container .stepper .step-line {
+  .b-container .container .stepper .step-line {
     width: 60px;
     height: 4px;
     margin-top: 12px;
   }
-  body .container .line,
-  body .container .line-2 {
+  .b-container .container .line,
+  .b-container .container .line-2 {
     width: 90%;
     margin: 2rem auto;
   }
-  body .container-1 .fields,
-  body .container-2 .fields,
-  body .container-3 .fields,
-  body .container-4 .fields {
+  .b-container .container-1 .fields,
+  .b-container .container-2 .fields,
+  .b-container .container-3 .fields,
+  .b-container .container-4 .fields {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  body .container-5 span {
+  .b-container .container-5 span {
     max-width: 100%;
     padding: 0 20px;
   }
-  body .container-5 img {
+  .b-container .container-5 img {
     max-width: 100%;
     height: auto;
   }

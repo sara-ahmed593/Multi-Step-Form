@@ -233,7 +233,7 @@ btnsNext.forEach(btn => {
         );
         if (validations[status]()) {
             highestCompletedStep = status + 1;
-
+            updateStepper()
             if (status === 3) {
                 initiateStep4();
             }
@@ -296,6 +296,7 @@ function goToPrevious(currentStep) {
 let highestCompletedStep = 1;
 
 const stepCircles = document.querySelectorAll(".step-circle");
+const stepLines = document.querySelectorAll(".step-line");
 
 stepCircles.forEach(circle => {
     circle.addEventListener("click", () => {
@@ -323,3 +324,30 @@ function navigateToStep(step) {
     }
 }
 
+function updateStepper() {
+
+    stepCircles.forEach((circle) => {
+        const targetStep = Number(circle.dataset.step);
+        if (targetStep <= highestCompletedStep) {
+            circle.classList.add("active");
+            circle.classList.remove("inactive");
+        } else {
+            circle.classList.add("inactive");
+            circle.classList.remove("active");
+        }
+    })
+
+
+    stepLines.forEach((line) => {
+        const targetStep = Number(line.dataset.step);
+        if (targetStep < highestCompletedStep) {
+            line.classList.add("active");
+            line.classList.remove("inactive");
+        } else {
+            line.classList.add("inactive");
+            line.classList.remove("active");
+        }
+    })
+}
+
+updateStepper()

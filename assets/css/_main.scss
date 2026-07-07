@@ -31,6 +31,7 @@
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
             font-weight: 500;
+            cursor: pointer;
         }
 
         .step-line {
@@ -82,7 +83,7 @@
     .btn-next {
         background: variables.$bg-main;
         color: variables.$text-white;
-        border: none;
+        border: 1px solid transparent;
         border-radius: 8px;
         padding: 0 24px;
         margin: 5px 30px;
@@ -103,6 +104,8 @@
             outline: 2px solid variables.$text-review;
         }
     }
+
+
 
 
 
@@ -134,13 +137,14 @@
 }
 
 
-body {
+.b-container {
     background-color: variables.$bg-body;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 24px 10px;
     gap: 14px;
 
     header {
@@ -202,7 +206,7 @@ body {
                     transition: 0.2s;
 
                     &:focus {
-                        border: 1px solid variables.$bg-main ;
+                        border: 1px solid variables.$bg-focus ;
                         outline: none;
                     }
 
@@ -491,7 +495,7 @@ body {
 
 @media (max-width: 768px) {
 
-    body {
+    .b-container {
 
         .title {
             font-size: 24px;
