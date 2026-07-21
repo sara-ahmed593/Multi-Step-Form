@@ -60,7 +60,6 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
 }
 .b-container .container-1 .stepper .step-line {
   width: 100px;
@@ -71,6 +70,7 @@
 .b-container .container-1 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
+  cursor: pointer;
 }
 .b-container .container-1 .stepper .inactive {
   background-color: #E5E7EB;
@@ -216,7 +216,6 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
 }
 .b-container .container-2 .stepper .step-line {
   width: 100px;
@@ -227,6 +226,7 @@
 .b-container .container-2 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
+  cursor: pointer;
 }
 .b-container .container-2 .stepper .inactive {
   background-color: #E5E7EB;
@@ -368,7 +368,6 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
 }
 .b-container .container-3 .stepper .step-line {
   width: 100px;
@@ -379,6 +378,7 @@
 .b-container .container-3 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
+  cursor: pointer;
 }
 .b-container .container-3 .stepper .inactive {
   background-color: #E5E7EB;
@@ -470,11 +470,12 @@
 .b-container .container-3 .fields .field:has(input:checked) {
   border: 1px solid #FC6C4C;
 }
-.b-container .container-3 .fields .field input[type=checkbox] {
+.b-container .container-3 .fields .field input[type=radio] {
   accent-color: #FC6C4C;
   width: 16px;
   height: 16px;
   transition: 0.2s;
+  cursor: pointer;
 }
 .b-container .container-3 .fields .field span {
   font-size: 14px;
@@ -519,7 +520,6 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
 }
 .b-container .container-4 .stepper .step-line {
   width: 100px;
@@ -530,6 +530,7 @@
 .b-container .container-4 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
+  cursor: pointer;
 }
 .b-container .container-4 .stepper .inactive {
   background-color: #E5E7EB;
@@ -606,8 +607,8 @@
   margin: 30px;
 }
 .b-container .container-4 .fields .field {
-  width: 100%;
-  height: 4rem;
+  width: 170px;
+  height: auto;
   display: flex;
   flex-direction: column;
   border: 1px solid #D1D5DB;
@@ -627,6 +628,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   color: #111827;
+  overflow-x: auto;
 }
 .b-container .container-4 .footer {
   display: flex;
@@ -656,7 +658,6 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
 }
 .b-container .container-5 .stepper .step-line {
   width: 100px;
@@ -667,6 +668,7 @@
 .b-container .container-5 .stepper .active {
   background-color: #FC6C4C;
   color: #fff;
+  cursor: pointer;
 }
 .b-container .container-5 .stepper .inactive {
   background-color: #E5E7EB;

@@ -157,21 +157,13 @@ function initiateStep2() {
 
 
 //  checkboxes only one can be checked at a time.
-let selectedBox = null;
 let valueTech = '';
 
 checkbox.forEach(box => {
     box.addEventListener('change', () => {
-
-        if (selectedBox && selectedBox !== box) {
-            selectedBox.checked = false;
-        }
-
         if (box.checked) {
-            selectedBox = box;
             valueTech = box.value;
         } else {
-            selectedBox = null;
             valueTech = '';
         }
     });
@@ -232,7 +224,12 @@ btnsNext.forEach(btn => {
             btn.closest('.container').getAttribute('data-step')
         );
         if (validations[status]()) {
-            highestCompletedStep = status + 1;
+            if (status + 1 > highestCompletedStep) {
+                highestCompletedStep = status + 1;
+            } else {
+                highestCompletedStep = highestCompletedStep;
+            }
+
             updateStepper()
             if (status === 3) {
                 initiateStep4();
@@ -290,7 +287,7 @@ function goToPrevious(currentStep) {
         current.style.display = "flex";
 
     }
-
+    updateStepper()
 }
 
 let highestCompletedStep = 1;
